@@ -1,0 +1,23 @@
+{
+    "name": "hello-world-service",
+    "version": "1.0.0",
+    "description": "Kumologica flow",
+    "main": "lambda.js",
+    "files": [
+      "lambda.js",
+      "hello-world-service-flow.json",
+      "node_modules/**/*"
+    ],
+    "scripts": {
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@kumologica/runtime": "3.2.2"
+    },
+    "devDependencies": {
+      "aws-sdk": "^2.513.0"
+    }
+  }
+  

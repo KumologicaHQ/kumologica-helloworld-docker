@@ -1,0 +1,23 @@
+{
+  "test": {
+    "testcase": "__runAll",
+    "environment": "__no_environment__",
+    "environments": [
+      "; ===========================================================",
+      "; Environment variables must be defined under one section",
+      "; You can define as many sections as you need.",
+      "; (Remove the semicolons to uncomment the lines)",
+      "; ===========================================================",
+      "",
+      "; Example:",
+      "",
+      "; [development] ",
+      "; KUMOLOGICA_LOGLEVEL=DEBUG",
+      "; VAR_1=VALUE_1",
+      "",
+      "; [test]",
+      "; KUMOLOGICA_LOGLEVEL=ERROR",
+      "; VAR_1=VALUE_1"
+    ]
+  }
+}

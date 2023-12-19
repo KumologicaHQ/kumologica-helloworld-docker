@@ -1,0 +1,146 @@
+[
+    {
+        "id": "main.flow",
+        "type": "tab",
+        "label": "main",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "test.flow",
+        "type": "tab",
+        "label": "test",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "eacbb9ef.69d5c8",
+        "type": "EventListener",
+        "z": "main.flow",
+        "name": "[GET] /hello",
+        "provider": "aws",
+        "eventSource": "api",
+        "dynamodbOperation": "",
+        "apiMethod": "get",
+        "apiUrl": "/hello",
+        "albMethod": "any",
+        "albUrl": "",
+        "bucketName": "",
+        "event": "",
+        "reference": "",
+        "queueName": "",
+        "topicName": "",
+        "partnerDetailType": "",
+        "websocketCustom": "",
+        "s3BucketName": "",
+        "s3Suffix": "",
+        "kapiUrl": "",
+        "kcronexpression": "",
+        "kreference": "",
+        "kObjectStoreName": "",
+        "zapiUrl": "",
+        "napiUrl": "",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "5eb3cd61.894f04"
+            ]
+        ],
+        "caname": "event-handler",
+        "category": "general"
+    },
+    {
+        "id": "5eb3cd61.894f04",
+        "type": "Logger",
+        "z": "main.flow",
+        "name": "Log_Entry",
+        "level": "INFO",
+        "message": "Inside the service",
+        "format": "string",
+        "headers": {},
+        "x": 310,
+        "y": 160,
+        "wires": [
+            [
+                "b5fc6ccd.17dd7"
+            ]
+        ],
+        "caname": "logger",
+        "category": "logging"
+    },
+    {
+        "id": "b5fc6ccd.17dd7",
+        "type": "EventListener-End",
+        "z": "main.flow",
+        "name": "Success",
+        "statusCode": "200",
+        "responseType": "http",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "payload": "{\"status\" : \"HelloWorld\"}",
+        "eventPayload": "",
+        "eventType": "success",
+        "x": 520,
+        "y": 160,
+        "wires": [],
+        "caname": "eventlistenerend",
+        "category": "general"
+    },
+    {
+        "id": "b970b7d2.5454c8",
+        "type": "Assertion",
+        "z": "test.flow",
+        "name": "check response",
+        "selector": "jsonBody",
+        "property": "hello",
+        "comparison": "equals",
+        "value": "world",
+        "x": 265,
+        "y": 160,
+        "wires": [
+            [
+                "e0721cc7.653eb"
+            ]
+        ],
+        "caname": "test-assertion",
+        "category": "testing"
+    },
+    {
+        "id": "e0721cc7.653eb",
+        "type": "TestCaseEnd",
+        "z": "test.flow",
+        "name": "TestCaseEnd",
+        "x": 425,
+        "y": 160,
+        "wires": [],
+        "caname": "test-case-end",
+        "category": "testing"
+    },
+    {
+        "id": "e8fb91dc.46c24",
+        "type": "HTTPTestCase",
+        "z": "test.flow",
+        "name": "HTTPTestCase",
+        "method": "GET",
+        "path": "/hello",
+        "headers": {
+            "Accept": "application/json"
+        },
+        "authtype": "none",
+        "secUser": "",
+        "secPassword": "",
+        "secToken": "",
+        "payload": "",
+        "x": 122.5,
+        "y": 160,
+        "wires": [
+            [
+                "b970b7d2.5454c8"
+            ]
+        ],
+        "caname": "http-test-case",
+        "category": "testing"
+    }
+]
